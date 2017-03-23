@@ -4,6 +4,8 @@ import store from './store/index'
 import router from './router/index'
 import { sync } from 'vuex-router-sync'
 
+import 'expose-loader?$!expose-loader?jQuery!jquery'
+
 sync(store, router)
 
 // 앱 인스턴스 생성

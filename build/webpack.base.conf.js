@@ -41,6 +41,7 @@ const config = {
         loader: 'eslint-loader',
         enforce: 'pre',
         include: [resolve('src'), resolve('test')],
+        exclude: [resolve('src/assets'), resolve('test')],
         options: {
           formatter: require('eslint-friendly-formatter')
         }
@@ -83,10 +84,21 @@ const config = {
           limit: 10000,
           name: 'img/[name].[hash:5].[ext]'
         }
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   },
-  plugins: []
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    })
+  ]
 }
 
 if (process.env.NODE_ENV !== 'production') {

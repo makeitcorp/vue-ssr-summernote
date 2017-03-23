@@ -12,12 +12,11 @@
     "build:server": "webpack --config build/webpack.server.conf.js --progress --hide-modules"
   },
   "dependencies": {
-    "amazon-cognito-identity-js": "^1.16.0",
-    "aws-sdk": "^2.28.0",
-    "axios": "^0.15.3",
+    "codemirror": "^5.25.0",
     "compression": "^1.6.2",
     "es6-promise": "^4.0.5",
     "express": "^4.15.2",
+    "jquery": "^3.2.1",
     "lru-cache": "^4.0.2",
     "serialize-javascript": "^1.3.0",
     "serve-favicon": "^2.3.2"
@@ -62,6 +61,7 @@
     "vue-router": "^2.1.1",
     "vue-server-renderer": "^2.1.7",
     "vuex": "^2.1.1",
-    "vuex-router-sync": "^4.0.2"
+    "vuex-router-sync": "^4.0.2",
+    "expose-loader": "^0.7.3"
   }
 }

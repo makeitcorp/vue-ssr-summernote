@@ -15,7 +15,7 @@ router.get('/users/:id', function (req, res, next) {
   var id = parseInt(req.params.id)
   if (id >= 0 && id < users.length) {
     res.json(users[id])
-  } else
+  } else {
     res.sendStatus(404)
   }
 })
